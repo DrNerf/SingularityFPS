@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25ceb08b2a55f7e47be698ca6ee36b5e, type: 3}
+  m_Name: MPCyborgHD
+  m_EditorClassIdentifier: 
+  DisplayName: MPCyborgHD
+  Description: 
+  Icon: {fileID: 0}
+  LocalPrefab: {fileID: 102894, guid: cf6bb391fee670b4ebd64fae06d31233, type: 2}
+  RemotePrefab: {fileID: 110576, guid: 6098a37097019a14a96d502550e9f933, type: 2}
+  mpPlayerTypeHelp: 73

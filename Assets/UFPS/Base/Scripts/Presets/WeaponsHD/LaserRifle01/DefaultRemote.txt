@@ -1,0 +1,13 @@
+///////////////////////////////////////////////////////////
+// Component Preset Script
+///////////////////////////////////////////////////////////
+
+ComponentType vp_Weapon
+PositionOffset -0.1 -1.66 -0.22
+PositionSpring2Stiffness 0.3
+PositionSpring2Damping 0.7
+RotationOffset -2.72 -1.55 0
+RotationSpring2Stiffness 0.8
+RotationSpring2Damping 0.8
+AnimationType 1
+AnimationGrip 2
