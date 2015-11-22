@@ -119,7 +119,7 @@ MonoBehaviour:
   GameLength: 300
   PauseLength: 20
   CurrentLevel: 
-  currentLevelHelp: 0
+  currentLevelHelp: 84
 --- !u!114 &11400010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -188,7 +188,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: currentLevelHelp
+      value: 84
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 100000}

@@ -9,8 +9,9 @@
 //
 /////////////////////////////////////////////////////////////////////////////////
 
-using UnityEngine; 
+using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
 
 public class vp_Weapon : vp_Component
 {
@@ -420,17 +421,23 @@ public class vp_Weapon : vp_Component
 	/// </summary>
 	protected virtual void Activate3rdPersonModel(bool active = true)
 	{
-
+        //Debug.Log(transform.parent.parent.name + " -> " + active);
 		// nothing more to do here if we have no 3rd person weapon model
 		if (Weapon3rdPersonModel == null)
-			return;
+            return;
 
-		if (active)
+        //Weapon3rdPersonModel.SetActive(active);
+
+        if (active)
 		{
 			// TODO: this should not toggle renderer, it should set invisible shadow caster material
 			if(Weapon3rdPersonModelRenderer != null)
 				Weapon3rdPersonModelRenderer.enabled = true;
-			vp_Utility.Activate(Weapon3rdPersonModel, true);
+            vp_Timer.In(0.5f, delegate() 
+            {
+                vp_Utility.Activate(Weapon3rdPersonModel, true);
+            });
+            Debug.Log("Show -> " + Weapon3rdPersonModel.name);
 		}
 		else
 		{
@@ -446,9 +453,16 @@ public class vp_Weapon : vp_Component
 				if (Weapon3rdPersonModel != null)
 					vp_Utility.Activate(Weapon3rdPersonModel, false);
 			}, m_Weapon3rdPersonModelWakeUpTimer);	// this timer handle is important to properly disable timer on application quit / level load
-		}
+            Debug.Log("Hide -> " + Weapon3rdPersonModel.name);
+        }
 
 	}
+
+    IEnumerator Activate3rdPersonModelWithDelay()
+    {
+        yield return new WaitForSeconds(0.5f);
+        vp_Utility.Activate(Weapon3rdPersonModel, true);
+    }
 
 
 	/// <summary>

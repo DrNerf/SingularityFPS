@@ -220,7 +220,8 @@ public static class vp_Utility
 	/// </summary>
 	public static void Activate(GameObject obj, bool activate = true)
 	{
-
+        if (obj == null)
+            return;
 #if UNITY_3_5
 		obj.SetActiveRecursively(activate);
 #else

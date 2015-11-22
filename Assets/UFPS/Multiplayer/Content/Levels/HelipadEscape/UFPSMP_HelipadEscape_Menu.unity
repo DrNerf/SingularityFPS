@@ -1726,8 +1726,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12a809589c91ff94db48c48f48b66415, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  helpBox: 161
-  ProductName: UFPS
+  helpBox: 139
+  ProductName: Singularity
 --- !u!114 &739066643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2561,7 +2561,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1353134381
 Transform:
   m_ObjectHideFlags: 0
@@ -2638,7 +2638,7 @@ MonoBehaviour:
   GameLength: 300
   PauseLength: 20
   CurrentLevel: MainLevel
-  currentLevelHelp: 95
+  currentLevelHelp: 84
 --- !u!114 &1353134386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3353,6 +3353,91 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!1001 &1838512059
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 11400000, guid: 08b832e8f9d61d6479e32b422279a17e, type: 2}
+      propertyPath: ItemTypes.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 08b832e8f9d61d6479e32b422279a17e, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 11.6831779
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 08b832e8f9d61d6479e32b422279a17e, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 8.6841116
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 08b832e8f9d61d6479e32b422279a17e, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 3.98400879
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 08b832e8f9d61d6479e32b422279a17e, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 08b832e8f9d61d6479e32b422279a17e, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 08b832e8f9d61d6479e32b422279a17e, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 08b832e8f9d61d6479e32b422279a17e, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 08b832e8f9d61d6479e32b422279a17e, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400012, guid: 08b832e8f9d61d6479e32b422279a17e, type: 2}
+      propertyPath: viewIdField
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400012, guid: 08b832e8f9d61d6479e32b422279a17e, type: 2}
+      propertyPath: instantiationId
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400006, guid: 08b832e8f9d61d6479e32b422279a17e, type: 2}
+      propertyPath: m_AddPrefabs.addPrefabsHelp
+      value: 111
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400006, guid: 08b832e8f9d61d6479e32b422279a17e, type: 2}
+      propertyPath: m_AddComponents.addComponentsHelp
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400006, guid: 08b832e8f9d61d6479e32b422279a17e, type: 2}
+      propertyPath: AvailablePlayerTypes.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 7ea30a4dc1231d949a50b09f46ad2bb9,
+        type: 2}
+    - target: {fileID: 11400000, guid: 08b832e8f9d61d6479e32b422279a17e, type: 2}
+      propertyPath: ItemTypes.Array.data[8]
+      value: 
+      objectReference: {fileID: 11400000, guid: 930f0cd5c6ed16346926e51f9aea667f,
+        type: 2}
+    - target: {fileID: 11400008, guid: 08b832e8f9d61d6479e32b422279a17e, type: 2}
+      propertyPath: CurrentLevel
+      value: MainLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 08b832e8f9d61d6479e32b422279a17e, type: 2}
+      propertyPath: ItemTypes.Array.data[9]
+      value: 
+      objectReference: {fileID: 11400000, guid: 0f70b911664a5ca49a0ccbcfc0e462b2,
+        type: 2}
+    - target: {fileID: 11400008, guid: 08b832e8f9d61d6479e32b422279a17e, type: 2}
+      propertyPath: currentLevelHelp
+      value: 95
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 08b832e8f9d61d6479e32b422279a17e, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1858628197
 GameObject:
   m_ObjectHideFlags: 1
