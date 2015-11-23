@@ -2187,7 +2187,7 @@ AnimatorStateTransition:
     m_ConditionEvent: IsMoving
     m_EventTreshold: .0250000004
   m_DstStateMachine: {fileID: 0}
-  m_DstState: {fileID: 110224573}
+  m_DstState: {fileID: 0}
   m_Solo: 0
   m_Mute: 0
   m_IsExit: 0
@@ -9414,7 +9414,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions: []
   m_DstStateMachine: {fileID: 0}
-  m_DstState: {fileID: 110224573}
+  m_DstState: {fileID: 0}
   m_Solo: 0
   m_Mute: 0
   m_IsExit: 0
@@ -12817,7 +12817,7 @@ AnimatorState:
   - {fileID: 110188450}
   m_StateMachineBehaviours: []
   m_Position: {x: -276, y: -120, z: 0}
-  m_IKOnFeet: 0
+  m_IKOnFeet: 1
   m_WriteDefaultValues: 1
   m_Mirror: 0
   m_SpeedParameterActive: 0
@@ -13497,13 +13497,7 @@ AnimatorStateMachine:
       first: {fileID: 110747342}
       second: []
     data:
-      first: {fileID: 110705304}
-      second: []
-    data:
       first: {fileID: 110716244}
-      second: []
-    data:
-      first: {fileID: 110721714}
       second: []
     data:
       first: {fileID: 110745152}
@@ -13512,7 +13506,13 @@ AnimatorStateMachine:
       first: {fileID: 110778811}
       second: []
     data:
+      first: {fileID: 110705304}
+      second: []
+    data:
       first: {fileID: 110784882}
+      second: []
+    data:
+      first: {fileID: 110721714}
       second: []
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: -192, y: -36, z: 0}
