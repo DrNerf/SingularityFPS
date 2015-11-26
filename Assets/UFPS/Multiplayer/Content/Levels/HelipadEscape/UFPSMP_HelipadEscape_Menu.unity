@@ -554,7 +554,7 @@ RenderSettings:
   m_AmbientGroundColor: {r: .0808823705, g: .0682496279, b: .0547145456, a: 1}
   m_AmbientIntensity: .5
   m_AmbientMode: 0
-  m_SkyboxMaterial: {fileID: 2100000, guid: 9ba05f538ee36044da5cd2a4f14a8b18, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 939e9a2214e37ec4e8eb4fe85d074704, type: 2}
   m_HaloStrength: .5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -565,7 +565,7 @@ RenderSettings:
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
-  m_Sun: {fileID: 0}
+  m_Sun: {fileID: 1676392755}
 --- !u!157 &4
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1740,7 +1740,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f21403533c4ed864da97e7dfda15065e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Splash: {fileID: 2800000, guid: cbb361f4db2a35845bcaf025ae44062f, type: 3}
+  Splash: {fileID: 0}
   RequireSetName: 1
   BigFont: {fileID: 12800000, guid: 4721e7a71e3620b4dac13fdc767ee80a, type: 3}
   SmallFont: {fileID: 12800000, guid: 4721e7a71e3620b4dac13fdc767ee80a, type: 3}
@@ -2161,7 +2161,7 @@ Camera:
   m_GameObject: {fileID: 971846937}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 1
   m_BackGroundColor: {r: .380352497, g: .442609251, b: .492647052, a: .0196078438}
   m_NormalizedViewPortRect:
     serializedVersion: 2
@@ -2638,7 +2638,7 @@ MonoBehaviour:
   GameLength: 300
   PauseLength: 20
   CurrentLevel: MainLevel
-  currentLevelHelp: 84
+  currentLevelHelp: 95
 --- !u!114 &1353134386
 MonoBehaviour:
   m_ObjectHideFlags: 0
