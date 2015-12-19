@@ -169,6 +169,18 @@ Prefab:
       propertyPath: States.Array.data[0].TextAsset
       value: 
       objectReference: {fileID: 4900000, guid: 3e767d9f78e025143a0ba76dfacef787, type: 3}
+    - target: {fileID: 8202864, guid: cf6bb391fee670b4ebd64fae06d31233, type: 2}
+      propertyPath: panLevelCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8202864, guid: cf6bb391fee670b4ebd64fae06d31233, type: 2}
+      propertyPath: reverbZoneMixCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 102894, guid: cf6bb391fee670b4ebd64fae06d31233, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf6bb391fee670b4ebd64fae06d31233, type: 2}
   m_IsPrefabParent: 0

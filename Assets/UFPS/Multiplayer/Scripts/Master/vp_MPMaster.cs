@@ -19,7 +19,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using Hashtable = ExitGames.Client.Photon.Hashtable;
-
+using System;
 
 public class vp_MPMaster : Photon.MonoBehaviour
 {
@@ -28,7 +28,7 @@ public class vp_MPMaster : Photon.MonoBehaviour
 	public float PauseLength = 20;			// default: 20 seconds
 	public string CurrentLevel = "";		// current level loaded on the master and enforced on all clients. master will load this on login
 #if UNITY_EDITOR
-	[vp_HelpBox("'CurrentLevel' will be loaded by the master on login. Joining players will fetch this string from the master and proceed to load the correct level. At any time, the master method 'TransmitLoadLevel' can be called to make everyone load a new level.", UnityEditor.MessageType.None, typeof(vp_MPMaster), null, false, vp_PropertyDrawerUtility.Space.Nothing)]
+    [vp_HelpBox("'CurrentLevel' will be loaded by the master on login. Joining players will fetch this string from the master and proceed to load the correct level. At any time, the master method 'TransmitLoadLevel' can be called to make everyone load a new level.", UnityEditor.MessageType.None, typeof(vp_MPMaster), null, false, vp_PropertyDrawerUtility.Space.Nothing)]
 	public float currentLevelHelp;
 #endif
 

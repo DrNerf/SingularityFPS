@@ -27,6 +27,7 @@ public class vp_MPDemoMainMenu : Photon.MonoBehaviour
 	public Font SmallFont;
 	public Font MessageFont;
 	public Texture BgTexture;
+    public bool DrawOldGUI;
 
 	// colors
 	protected Color m_CurrentSplashColor = Color.white;
@@ -65,11 +66,12 @@ public class vp_MPDemoMainMenu : Photon.MonoBehaviour
 		}
 	}
 
+    public static vp_MPDemoMainMenu Instance;
 
-	/// <summary>
-	/// 
-	/// </summary>
-	protected virtual void OnEnable()
+    /// <summary>
+    /// 
+    /// </summary>
+    protected virtual void OnEnable()
 	{
 
 		vp_GlobalEvent.Register("DisableMultiplayerGUI", delegate() { vp_Utility.Activate(gameObject, false); });	// called from 'vp_MPSinglePlayerTest'
@@ -104,6 +106,8 @@ public class vp_MPDemoMainMenu : Photon.MonoBehaviour
 		if(DontDestroyOnLoad)
 			Object.DontDestroyOnLoad(transform.root.gameObject);
 
+        Instance = this;
+
 	}
 
 
@@ -132,90 +136,93 @@ public class vp_MPDemoMainMenu : Photon.MonoBehaviour
 
 		GUI.SetNextControlName("1");
 		Vector2 startPos = new Vector2((Screen.width / 2) - (Screen.width / 3.5f), (Screen.height / 2) - (Screen.height / 3.5f));
-		DrawButton(m_StartButtonText, startPos, new Vector2((Screen.width / 4), (Screen.height / 9)),
-			ButtonStyle, m_StartButtonColor, Color.clear, BgTexture, delegate()
-			{
+        if(DrawOldGUI)
+        {
+		    DrawButton(m_StartButtonText, startPos, new Vector2((Screen.width / 4), (Screen.height / 9)),
+			    ButtonStyle, m_StartButtonColor, Color.clear, BgTexture, delegate()
+			    {
 
-				if ((RequireSetName == true) && (m_PlayerName == m_DefaultPlayerName))
-				{
-					m_NameColor = Color.red;
-					vp_Timer.In(1, delegate()
-					{
-						m_NameColor = Color.white;
-					});
-					return;
-				}
+				    if ((RequireSetName == true) && (m_PlayerName == m_DefaultPlayerName))
+				    {
+					    m_NameColor = Color.red;
+					    vp_Timer.In(1, delegate()
+					    {
+						    m_NameColor = Color.white;
+					    });
+					    return;
+				    }
 
-				if(FindObjectOfType<vp_MPConnection>() == null)
-				{
-					m_StartButtonText = "No MP scripts ...";
-					m_StartButtonColor = Color.red;
-					vp_Timer.In(1, delegate()
-					{
-						m_StartButtonColor = Color.white;
-						m_StartButtonText = m_DefaultStartButtonText;
-					});
-					return;
-				}
+				    if(FindObjectOfType<vp_MPConnection>() == null)
+				    {
+					    m_StartButtonText = "No MP scripts ...";
+					    m_StartButtonColor = Color.red;
+					    vp_Timer.In(1, delegate()
+					    {
+						    m_StartButtonColor = Color.white;
+						    m_StartButtonText = m_DefaultStartButtonText;
+					    });
+					    return;
+				    }
 
-				m_StartButtonText = "Connecting ...";
+				    m_StartButtonText = "Connecting ...";
 				
-				vp_Timer.In(0.1f, delegate()
-				{
-					vp_MPConnection.StayConnected = true;
-					Chat.enabled = true;
-					GUI.FocusControl("1");
-					m_UserPressedConnect = true;
-					while (m_PlayerName.Length < 3)
-					{
-						m_PlayerName = "#" + m_PlayerName;
-					}
-				});
-			});
+				    vp_Timer.In(0.1f, delegate()
+				    {
+					    vp_MPConnection.StayConnected = true;
+					    Chat.enabled = true;
+					    GUI.FocusControl("1");
+					    m_UserPressedConnect = true;
+					    while (m_PlayerName.Length < 3)
+					    {
+						    m_PlayerName = "#" + m_PlayerName;
+					    }
+				    });
+			    });
 
-		GUI.enabled = !m_UserPressedConnect;
+		    GUI.enabled = !m_UserPressedConnect;
 
-		m_Pos.x = startPos.x;
-		m_Pos.y += Screen.height / 50;
-		DrawTextField("Name: ", m_Pos, new Vector2((Screen.width / 4), (Screen.height / 9)),
-		ButtonStyle, m_NameColor, Color.clear, BgTexture);
-		m_Pos.x = startPos.x;
-		m_Pos.y += Screen.height / 50;
-		DrawButton(m_FullScreenButtonText, m_Pos, new Vector2((Screen.width / 4), (Screen.height / 9)),
-			ButtonStyle, Color.white, Color.clear, BgTexture, delegate()
-			{
-				ToggleFullscreen();
-				m_FullScreenButtonText = (Screen.fullScreen ? "Fullscreen" : "Windowed");
-			});
-		m_Pos.x = startPos.x;
-		m_Pos.y += Screen.height / 50;
-		if(string.IsNullOrEmpty(m_QualityButtonText))
-			m_QualityButtonText = "Quality: " + m_Qualitys[QualitySettings.GetQualityLevel()];
-		DrawButton(m_QualityButtonText, m_Pos, new Vector2((Screen.width / 4), (Screen.height / 9)),
-		ButtonStyle, Color.white, Color.clear, BgTexture, delegate()
-		{
-			m_QualityButtonText = "Please wait ...";
-			m_Quality++;
-			if (m_Quality > 5)
-				m_Quality = 0;
-			vp_Timer.In(0.1f, delegate()
-			{
-				QualitySettings.SetQualityLevel(m_Quality, false);
-				m_QualityButtonText = "Quality: " + m_Qualitys[QualitySettings.GetQualityLevel()];
-			});
-		});
+		    m_Pos.x = startPos.x;
+		    m_Pos.y += Screen.height / 50;
+		    DrawTextField("Name: ", m_Pos, new Vector2((Screen.width / 4), (Screen.height / 9)),
+		    ButtonStyle, m_NameColor, Color.clear, BgTexture);
+		    m_Pos.x = startPos.x;
+		    m_Pos.y += Screen.height / 50;
+		    DrawButton(m_FullScreenButtonText, m_Pos, new Vector2((Screen.width / 4), (Screen.height / 9)),
+			    ButtonStyle, Color.white, Color.clear, BgTexture, delegate()
+			    {
+				    ToggleFullscreen();
+				    m_FullScreenButtonText = (Screen.fullScreen ? "Fullscreen" : "Windowed");
+			    });
+		    m_Pos.x = startPos.x;
+		    m_Pos.y += Screen.height / 50;
+		    if(string.IsNullOrEmpty(m_QualityButtonText))
+			    m_QualityButtonText = "Quality: " + m_Qualitys[QualitySettings.GetQualityLevel()];
+		    DrawButton(m_QualityButtonText, m_Pos, new Vector2((Screen.width / 4), (Screen.height / 9)),
+		    ButtonStyle, Color.white, Color.clear, BgTexture, delegate()
+		    {
+			    m_QualityButtonText = "Please wait ...";
+			    m_Quality++;
+			    if (m_Quality > 5)
+				    m_Quality = 0;
+			    vp_Timer.In(0.1f, delegate()
+			    {
+				    QualitySettings.SetQualityLevel(m_Quality, false);
+				    m_QualityButtonText = "Quality: " + m_Qualitys[QualitySettings.GetQualityLevel()];
+			    });
+		    });
 
-		m_Pos.x = startPos.x;
-		m_Pos.y += Screen.height / 50;
-		DrawButton("Quit", m_Pos, new Vector2((Screen.width / 4), (Screen.height / 9)),
-		ButtonStyle, Color.white, Color.clear, BgTexture, delegate()
-		{
-			Application.Quit();
-		});
+		    m_Pos.x = startPos.x;
+		    m_Pos.y += Screen.height / 50;
+		    DrawButton("Quit", m_Pos, new Vector2((Screen.width / 4), (Screen.height / 9)),
+		    ButtonStyle, Color.white, Color.clear, BgTexture, delegate()
+		    {
+			    Application.Quit();
+		    });
 		
-		GUI.enabled = true;
+		    GUI.enabled = true;
+        }
 
-	}
+    }
 
 
 	/// <summary>
@@ -401,5 +408,47 @@ public class vp_MPDemoMainMenu : Photon.MonoBehaviour
 		}
 	}
 
+    public void SetPlayerName(string name)
+    {
+        m_PlayerName = name;
+        Debug.Log("Name set to: " + name);
+    }
+
+    public string StartGame()
+    {
+        if ((RequireSetName == true) && (m_PlayerName == m_DefaultPlayerName))
+        {
+            m_NameColor = Color.red;
+            vp_Timer.In(1, delegate ()
+            {
+                m_NameColor = Color.white;
+            });
+            return "";
+        }
+
+        if (FindObjectOfType<vp_MPConnection>() == null)
+        {
+            m_StartButtonText = "No MP scripts ...";
+            m_StartButtonColor = Color.red;
+            vp_Timer.In(1, delegate ()
+            {
+                m_StartButtonColor = Color.white;
+                m_StartButtonText = m_DefaultStartButtonText;
+            });
+            return "";
+        }
+        vp_Timer.In(0.1f, delegate ()
+        {
+            vp_MPConnection.StayConnected = true;
+            Chat.enabled = true;
+            GUI.FocusControl("1");
+            m_UserPressedConnect = true;
+            while (m_PlayerName.Length < 3)
+            {
+                m_PlayerName = "#" + m_PlayerName;
+            }
+        });
+        return m_StartButtonText = "Connecting ...";
+    }
 
 }
