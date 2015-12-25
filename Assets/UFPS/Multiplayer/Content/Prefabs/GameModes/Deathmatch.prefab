@@ -30,7 +30,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.6831779, y: 8.6841116, z: 3.98400879}
+  m_LocalPosition: {x: 11.683178, y: 8.684112, z: 3.9840088}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -55,6 +55,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8b01507bf3c4f444b9b72c6b99331f84, type: 2}
   - {fileID: 11400000, guid: 3a65c1045a843bc4ba9680febc091edf, type: 2}
   - {fileID: 11400000, guid: 946f653b3250fba4caf20b0e8589e14a, type: 2}
+  - {fileID: 11400000, guid: 930f0cd5c6ed16346926e51f9aea667f, type: 2}
+  - {fileID: 11400000, guid: 0f70b911664a5ca49a0ccbcfc0e462b2, type: 2}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -90,13 +92,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AvailablePlayerTypes:
-  - {fileID: 11400000, guid: 9bebfaa0fb3d33647a1986338b131e3f, type: 2}
+  - {fileID: 11400000, guid: 7ea30a4dc1231d949a50b09f46ad2bb9, type: 2}
   m_AddPrefabs:
     Local: []
     Remote:
     - Prefab: {fileID: 100000, guid: 2ee56cc10b921a247bed60dd632d7a8e, type: 2}
       ParentName: Head
-    addPrefabsHelp: 133
+    addPrefabsHelp: 111
   m_AddComponents:
     Local:
     - ComponentName: vp_DMPlayerStats
@@ -104,7 +106,7 @@ MonoBehaviour:
     Remote:
     - ComponentName: vp_DMPlayerStats
       TransformName: 
-    addComponentsHelp: 111
+    addComponentsHelp: 100
 --- !u!114 &11400008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -118,7 +120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameLength: 300
   PauseLength: 20
-  CurrentLevel: 
+  CurrentLevel: MainLevel
   currentLevelHelp: 84
 --- !u!114 &11400010
 MonoBehaviour:

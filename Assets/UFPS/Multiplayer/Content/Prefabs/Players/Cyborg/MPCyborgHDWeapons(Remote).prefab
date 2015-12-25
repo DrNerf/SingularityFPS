@@ -6237,7 +6237,7 @@ MonoBehaviour:
   RespawnCheckRadius: -99999
   RespawnSound: {fileID: 0}
   DeathEffect: {fileID: 0}
-  helpbox: 95
+  helpbox: 84
   AllowFallDamage: 1
   FallImpactThreshold: 0.5
   DeathOnFallImpactThreshold: 0
@@ -7954,7 +7954,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: helpbox
-      value: 155
+      value: 84
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: VelocityMultiplier
