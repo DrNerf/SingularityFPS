@@ -55,6 +55,12 @@ public class vp_DMMaster : vp_MPMaster
 		vp_DMDemoScoreBoard.ShowScore = false;
 		
 	}
-	
-	
+
+    protected override void OnLevelWasLoaded(int id)
+    {
+        if(id != 0)
+            base.OnLevelWasLoaded(id);
+    }
+
+
 }

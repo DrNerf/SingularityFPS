@@ -11864,7 +11864,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 102894, guid: cf6bb391fee670b4ebd64fae06d31233, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 14468392, guid: cf6bb391fee670b4ebd64fae06d31233, type: 2}
       propertyPath: m_ConnectedAnchor.x

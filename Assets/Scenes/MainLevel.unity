@@ -66,7 +66,7 @@ LightmapSettings:
     m_FinalGather: 0
     m_FinalGatherRayCount: 1024
     m_ReflectionCompression: 2
-  m_LightingDataAsset: {fileID: 112000001, guid: 261765e64ee04f141b6fb0e943d57158,
+  m_LightingDataAsset: {fileID: 112000001, guid: d7f8b2ace99f486478cca4e4dc91a6d3,
     type: 2}
   m_RuntimeCPUUsage: 25
 --- !u!196 &4
@@ -722,7 +722,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &433499964
 Transform:
   m_ObjectHideFlags: 0
@@ -3663,7 +3663,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1825662092
 Transform:
   m_ObjectHideFlags: 0
